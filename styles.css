@@ -1,0 +1,86 @@
+body{
+    background-color: black;
+    text-align: center;
+    align-items: center;
+    font-family: screenMatrix;
+}
+
+@font-face {
+    font-family: screenMatrix;
+    src: url(ScreenMatrix.ttf);
+}
+
+h1{
+    color: red;
+    font-size: 700%;
+}
+
+p{
+    color: white;
+    font-size: 200%;
+}
+
+.menuSection{
+    display: contents;
+}
+
+div {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    margin: auto;
+  }
+
+button {
+    font-family: screenMatrix;
+    background-color: transparent;
+    color: white;
+    border-style: solid;
+    font-size: 500%;
+    width: 100%;
+    margin: 5px; /* or whatever you like */
+  }
+
+  
+.playButton:hover{
+    background-color: green;
+}
+
+.howToPlayText{
+border-style: solid;
+}
+
+.howToPlayButton:hover{
+    background-color: 	#B3AD04;
+}
+
+.hiddenItem{
+    display: none;
+}
+
+/* footer section */
+footer {
+    margin: auto;
+    margin-top: 80px;
+    font-size: 1rem;
+    padding-top: 0px;
+  }
+  
+  .imgNima{
+    width: 1.5rem;
+  }
+  
+  .footerText{
+    color: #950101;
+  }
+  
+  a{
+    text-decoration: none;
+    
+    color: #DBEDF3;
+  }
+  
+  a:hover{
+    color: #a2b0b4;
+  }
+
