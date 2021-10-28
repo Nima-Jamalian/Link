@@ -24,9 +24,11 @@ p{
     font-size: 200%;
 }
 
+/* Menu */
 .menuSection{
     display: contents;
 }
+
 
 div {
     display: flex;
@@ -62,7 +64,47 @@ border-style: solid;
     display: none;
 }
 
+/* Level Selection Section */
+.levelSelection{
+  display: contents;
+}
 
+.easyButton{
+  background-color: #005200;
+}
+
+.easyButton:hover{
+  background-color: green;
+}
+
+.meduimButton{
+  background-color: #505000;
+}
+
+.meduimButton:hover{
+  background-color: 	#999403;
+}
+
+.hardButton{
+  background-color: #4f0000;
+}
+
+.hardButton:hover{
+  background-color: #8f0909;
+}
+
+.backButton:hover{
+  background-color: #8f0909;
+}
+
+/* Easy Level Section */
+.easyLevelSelection{
+  display: contents;
+}
+
+.easyLevelSelectionItems{
+  background-color: #005200;
+}
 /* Game */
 canvas {
   position: relative;
@@ -70,7 +112,7 @@ canvas {
   display: flex;
   margin: auto;
   margin-top: 0px;
-  border: 5px solid #3D0000;
+  /* border: 5px solid #3D0000; */
 }
 
 /* footer section */

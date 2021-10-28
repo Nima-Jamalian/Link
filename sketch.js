@@ -28,7 +28,7 @@ function numToColor(num) {
 }
 
 function preload(){
-    gameFont = loadFont(ScreenMatrix.ttf);
+    // gameFont = loadFont(ScreenMatrix.ttf);
 }
 
 function setup() {
@@ -168,6 +168,8 @@ function draw() {
                 }
             }
         } else {
+            fill(0,255,0,50);
+            rect(0,0,board[0].length*gw, board.length*gw);
             fill(255);
             textAlign(CENTER);
             textSize(40);
@@ -175,7 +177,6 @@ function draw() {
             text("YOU WON", 0, height / 2 - 50, width, height);
         }
     }
-   
 }
 
 function windowResized() {
@@ -203,6 +204,7 @@ function windowResized() {
  }
 
 function initializeFields() {
+    gameFont = loadFont('ScreenMatrix.ttf');
     board = [ [ 0, 1, 0, 0, 0, 0, 0, 2 ], [ 0, 3, 0, 0, 0, 0, 4, 0 ], [ 0, 0, 0, 0, 5, 0, 6, 0 ], [ 0, 0, 0, 6, 0, 0, 2, 0 ], [ 0, 0, 0, 1, 7, 0, 0, 0 ], [ 0, 3, 4, 0, 0, 0, 7, 0 ], [ 0, 0, 0, 0, 5, 0, 0, 0 ], [ 8, 0, 0, 0, 0, 0, 0, 8 ] ];
     gw = 100;
     startx = 0;
