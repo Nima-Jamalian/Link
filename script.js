@@ -4,9 +4,17 @@ const menuSection = document.querySelector(".menuSection");
 const howToPlayButton = document.querySelector(".howToPlayButton");
 const howToPlayText = document.querySelector(".howToPlayText");
 
+//UI
+const myFooter = document.querySelector(".footerText");
+
+//Game
+var loadGame = false;
+var resizeGameWindow = true;
 
 playButton.addEventListener("click",()=>{
     DisplayMenu(false);
+    loadGame = true;
+
 });
 
 
@@ -16,6 +24,7 @@ howToPlayButton.addEventListener("click",()=>{
     } else {
         howToPlayText.classList.add("hiddenItem");
     }
+    moveFooter();
 });
 
 function DisplayMenu(show){
@@ -25,3 +34,8 @@ function DisplayMenu(show){
         menuSection.classList.add("hiddenItem");
     }
 }
+
+function moveFooter(){
+    myFooter.classList.add("moveFooter");
+}
+
