@@ -14,7 +14,7 @@ var resizeGameWindow = true;
 playButton.addEventListener("click",()=>{
     DisplayMenu(false);
     loadGame = true;
-
+    moveFooter();
 });
 
 
@@ -24,7 +24,6 @@ howToPlayButton.addEventListener("click",()=>{
     } else {
         howToPlayText.classList.add("hiddenItem");
     }
-    moveFooter();
 });
 
 function DisplayMenu(show){
