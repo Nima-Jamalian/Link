@@ -3,7 +3,7 @@ const playButton = document.querySelector(".playButton");
 const menuSection = document.querySelector(".menuSection");
 const howToPlayButton = document.querySelector(".howToPlayButton");
 const howToPlayText = document.querySelector(".howToPlayText");
-const menueBackButton = document.querySelector(".backButtonLevelSelection");
+const menuBackButton = document.querySelector(".backButtonLevelSelection");
 
 //Level Selection 
 const levelSelectionSection = document.querySelectorAll(".levelSelectionItems");
@@ -18,7 +18,7 @@ const myFooter = document.querySelector(".footerText");
 //Game
 var loadGame = false;
 var resizeGameWindow = true;
-
+const gameBackButton = document.querySelector(".gameBackButton");
 
 //Menu
 playButton.addEventListener("click",()=>{
@@ -34,7 +34,7 @@ howToPlayButton.addEventListener("click",()=>{
     }
 });
 
-menueBackButton .addEventListener("click",()=>{
+menuBackButton.addEventListener("click",()=>{
     DisplayLevelSelection(false);
     DisplayMenu(true);
 });
@@ -88,6 +88,7 @@ function DisplayEasyLevelItems(show){
         for(var i=0; i<easyLevelSelectionItems.length; i++){
             easyLevelSelectionItems[i].classList.remove("hiddenItem");
         }
+
     } else {
         for(var i=0; i<easyLevelSelectionItems.length; i++){
             easyLevelSelectionItems[i].classList.add("hiddenItem");
@@ -102,6 +103,14 @@ function SetUpGame(level){
         gameLevelData = parseInt(level);
         boardLoaded = true;
         loadGame = true;
-        moveFooter();
+        gameBackButton.classList.remove("hiddenItem");
+        // moveFooter();
     }
 }
+
+gameBackButton.addEventListener("click",()=>{
+loadGame = false;
+boardLoaded = false;
+DisplayLevelSelection(true);
+gameBackButton.classList.add("hiddenItem");
+});

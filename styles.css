@@ -127,6 +127,9 @@ canvas {
   margin-top: 0px;
   /* border: 5px solid #3D0000; */
 }
+.time{
+
+}
 
 .gameBackButton:hover{
   background-color: #8f0909;
