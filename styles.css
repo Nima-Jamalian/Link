@@ -56,6 +56,7 @@ button {
 
 .howToPlayText{
 border-style: solid;
+padding: 2%;
 }
 
 .howToPlayButton:hover{
@@ -118,6 +119,45 @@ border-style: solid;
 .backButtonEasyLevelsSelection:hover{
   background-color: #8f0909;
 }
+
+/* Medium Level Section */
+.mediumLevelSelection{
+  display: contents;
+}
+
+.mediumLevelSelectionItems{
+  background-color: #505000;
+}
+
+.mediumLevelSelectionItems:hover{
+  background-color: 	#999403;
+}
+.backButtonMediumLevelsSelection{
+  background-color: transparent;
+}
+.backButtonMediumLevelsSelection:hover{
+  background-color: #8f0909;
+}
+
+/* Hard Level Section */
+.hardLevelSelection{
+  display: contents;
+}
+
+.hardLevelSelectionItems{
+  background-color: #4f0000;
+}
+
+.hardLevelSelectionItems:hover{
+  background-color: 	#8f0909;
+}
+.backButtonHardLevelsSelection{
+  background-color: transparent;
+}
+.backButtonHardLevelsSelection:hover{
+  background-color: #8f0909;
+}
+
 /* Game */
 canvas {
   position: relative;
