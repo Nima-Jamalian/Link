@@ -50,6 +50,7 @@ button {
 
   @media only screen and (max-width: 760px) {
     button {   font-size: 10vw; }
+    .howToPlayText{font-size: 10vw;}
   }
   
 .playButton:hover{
@@ -171,6 +172,10 @@ canvas {
 }
 .time{
 
+}
+
+.gameBackButton{
+  margin-bottom: 50px;
 }
 
 .gameBackButton:hover{
