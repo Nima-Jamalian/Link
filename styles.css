@@ -3,8 +3,7 @@ body{
     text-align: center;
     align-items: center;
     font-family: screenMatrix;
-    /* Add this when in game */
-    /* touch-action: none; */
+
 }
 
 canvas {
@@ -169,6 +168,8 @@ canvas {
   margin: auto;
   margin-top: 0px;
   /* border: 5px solid #3D0000; */
+      /* Add this when in game */
+    touch-action: none;
 }
 .time{
 
