@@ -3,6 +3,7 @@ body{
     text-align: center;
     align-items: center;
     font-family: screenMatrix;
+    /* Add this when in game */
     touch-action: none;
 }
 
