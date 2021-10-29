@@ -31,6 +31,7 @@ const gameBackButton = document.querySelector(".gameBackButton");
 playButton.addEventListener("click",()=>{
     DisplayMenu(false);
     DisplayLevelSelection(true)
+    DisplayFooter(false);
 });
 
 howToPlayButton.addEventListener("click",()=>{
@@ -44,6 +45,7 @@ howToPlayButton.addEventListener("click",()=>{
 menuBackButton.addEventListener("click",()=>{
     DisplayLevelSelection(false);
     DisplayMenu(true);
+    DisplayFooter(true);
 });
 
 function DisplayMenu(show){
@@ -67,8 +69,12 @@ function DisplayLevelSelection(show){
 }
 
 //UI
-function moveFooter(){
-    myFooter.classList.add("moveFooter");
+function DisplayFooter(show){
+    if(show){
+        myFooter.classList.remove("hiddenItem");
+    } else {
+        myFooter.classList.add("hiddenItem");
+    }
 }
 
 //Level Selection Section
@@ -171,7 +177,8 @@ function SetUpGame(level){
         boardLoaded = true;
         loadGame = true;
         gameBackButton.classList.remove("hiddenItem");
-        // moveFooter();
+        //Stop user from scroll touch
+        document.body.style.touchAction = "none";
     }
 }
 
@@ -180,4 +187,6 @@ loadGame = false;
 boardLoaded = false;
 DisplayLevelSelection(true);
 gameBackButton.classList.add("hiddenItem");
+//Activate scroll touch again
+document.body.style.touchAction = "auto"
 });

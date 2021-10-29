@@ -1,11 +1,10 @@
-html,body { -webkit-text-size-adjust:none; }
 body{
     background-color: black;
     text-align: center;
     align-items: center;
     font-family: screenMatrix;
     /* Add this when in game */
-    touch-action: none;
+    /* touch-action: none; */
 }
 
 canvas {
@@ -49,6 +48,9 @@ button {
     margin: 5px; /* or whatever you like */
   }
 
+  @media only screen and (max-width: 760px) {
+    button {   font-size: 10vw; }
+  }
   
 .playButton:hover{
     background-color: green;
@@ -193,7 +195,8 @@ footer {
 
   .moveFooter{
     position: relative;
-    bottom: -850px;
+    /* bottom: -850px; */
+    bottom: -400px;
   }
   
   a{
