@@ -3,15 +3,17 @@ const playButton = document.querySelector(".playButton");
 const menuSection = document.querySelector(".menuSection");
 const howToPlayButton = document.querySelector(".howToPlayButton");
 const howToPlayText = document.querySelector(".howToPlayText");
+const menueBackButton = document.querySelector(".backButtonLevelSelection");
 
 //Level Selection 
 const levelSelectionSection = document.querySelectorAll(".levelSelectionItems");
 const easyLevelsButton = document.querySelector(".easyButton");
 const easyLevelSelectionItems = document.querySelectorAll(".easyLevelSelectionItems");
-
+const easylevelsBackButton = document.querySelector(".backButtonEasyLevelsSelection");
 
 //UI
 const myFooter = document.querySelector(".footerText");
+
 
 //Game
 var loadGame = false;
@@ -33,6 +35,11 @@ howToPlayButton.addEventListener("click",()=>{
     } else {
         howToPlayText.classList.add("hiddenItem");
     }
+});
+
+menueBackButton .addEventListener("click",()=>{
+    DisplayLevelSelection(false);
+    DisplayMenu(true);
 });
 
 function DisplayMenu(show){
@@ -66,6 +73,20 @@ easyLevelsButton.addEventListener("click",()=>{
     DisplayEasyLevelItems(true);
 });
 
+easylevelsBackButton.addEventListener("click",()=>{
+    DisplayLevelSelection(true);
+    DisplayEasyLevelItems(false);
+});
+
+easyLevelSelectionItems.forEach(item => {
+
+    item.addEventListener("click", ()=>{
+        SetUpGame(item.innerHTML);
+        DisplayEasyLevelItems(false);
+        console.log(item.innerHTML);
+    })
+});
+
 function DisplayEasyLevelItems(show){
     if(show == true){
         for(var i=0; i<easyLevelSelectionItems.length; i++){
@@ -76,4 +97,11 @@ function DisplayEasyLevelItems(show){
             easyLevelSelectionItems[i].classList.add("hiddenItem");
         }
     }
+}
+
+
+//Game
+function SetUpGame(level){
+    loadGame = true;
+    moveFooter();
 }

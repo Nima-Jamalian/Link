@@ -93,7 +93,7 @@ border-style: solid;
   background-color: #8f0909;
 }
 
-.backButton:hover{
+.backButtonLevelSelection:hover{
   background-color: #8f0909;
 }
 
@@ -104,6 +104,17 @@ border-style: solid;
 
 .easyLevelSelectionItems{
   background-color: #005200;
+}
+
+.easyLevelSelectionItems:hover{
+  background-color: green;
+}
+
+.backButtonEasyLevelsSelection{
+  background-color: transparent;
+}
+.backButtonEasyLevelsSelection:hover{
+  background-color: #8f0909;
 }
 /* Game */
 canvas {
