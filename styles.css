@@ -3,6 +3,7 @@ body{
     text-align: center;
     align-items: center;
     font-family: screenMatrix;
+    touch-action: none;
 }
 
 canvas {
