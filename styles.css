@@ -1,3 +1,4 @@
+html,body { -webkit-text-size-adjust:none; }
 body{
     background-color: black;
     text-align: center;
@@ -31,13 +32,12 @@ p{
     display: contents;
 }
 
-
 div {
     display: flex;
     justify-content: space-around;
     width: 60%;
     margin: auto;
-  }
+}
 
 button {
     font-family: screenMatrix;
