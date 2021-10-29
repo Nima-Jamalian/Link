@@ -24,9 +24,6 @@ var resizeGameWindow = true;
 playButton.addEventListener("click",()=>{
     DisplayMenu(false);
     DisplayLevelSelection(true)
-    //play Game
-    //loadGame = true;
-    //moveFooter();
 });
 
 howToPlayButton.addEventListener("click",()=>{
@@ -69,8 +66,8 @@ function moveFooter(){
 
 //Level Selection Section
 easyLevelsButton.addEventListener("click",()=>{
-    DisplayLevelSelection(false);
     DisplayEasyLevelItems(true);
+    DisplayLevelSelection(false);
 });
 
 easylevelsBackButton.addEventListener("click",()=>{
@@ -79,7 +76,6 @@ easylevelsBackButton.addEventListener("click",()=>{
 });
 
 easyLevelSelectionItems.forEach(item => {
-
     item.addEventListener("click", ()=>{
         SetUpGame(item.innerHTML);
         DisplayEasyLevelItems(false);
@@ -102,6 +98,10 @@ function DisplayEasyLevelItems(show){
 
 //Game
 function SetUpGame(level){
-    loadGame = true;
-    moveFooter();
+    if(level != "Back"){
+        gameLevelData = parseInt(level);
+        boardLoaded = true;
+        loadGame = true;
+        moveFooter();
+    }
 }

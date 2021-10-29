@@ -6,6 +6,8 @@ var gw, startx, starty, curx, cury;
 var selected, won;
 
 var gameFont;
+
+var gameLevelData;
 // color for point
 function numToColor(num) {
     if (num == 1)
@@ -112,11 +114,34 @@ function checkwin() {
     }
 }
 
-var called = false;
+var boardLoaded;
 function draw() {
     //making windows resizable
     windowResized();
     if(loadGame){
+        if(boardLoaded){
+            switch(gameLevelData){
+                case 1:
+                    board = [
+                        [1,0,2,0,3],
+                        [0,0,4,0,5],
+                        [0,0,0,0,0],
+                        [0,2,0,3,0],
+                        [0,1,4,5,0]
+                    ];
+                    break;
+                case 2:
+                    board = [
+                        [ 7,0,0,0,0 ],
+                        [ 0,0,0,0,0 ],
+                        [ 0,0,1,0,0 ],
+                        [ 2,1,4,0,7 ],
+                        [ 4,0,0,0,2 ]
+                    ];
+            }
+            boardLoaded = false;
+        }
+
         background(0);
         drawboard();
 
