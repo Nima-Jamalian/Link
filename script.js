@@ -178,7 +178,7 @@ function SetUpGame(level){
         loadGame = true;
         gameBackButton.classList.remove("hiddenItem");
         //Stop user from scroll touch
-        // document.body.style.touchAction = "none";
+        document.body.style.touchAction = "none";
     }
 }
 
@@ -188,5 +188,5 @@ boardLoaded = false;
 DisplayLevelSelection(true);
 gameBackButton.classList.add("hiddenItem");
 //Activate scroll touch again
-// document.body.style.touchAction = "auto"
+document.body.style.touchAction = "auto"
 });
