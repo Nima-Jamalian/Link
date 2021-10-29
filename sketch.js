@@ -29,14 +29,24 @@ function numToColor(num) {
     return color(255);
 }
 
-function setup() {
+function numToColorPipe(num) {
+    if (num == 1) return color(0, 0, 255, 50);
+    if (num == 2) return color(255, 0, 0, 50);
+    if (num == 3) return color(255, 100, 0, 50);
+    if (num == 4) return color(0, 255, 0, 50);
+    if (num == 5) return color(0, 255, 255, 50);
+    if (num == 6) return color(255, 0, 255, 50);
+    if (num == 7) return color(255, 255, 0, 50);
+    if (num == 8) return color(50, 0, 100, 50);
+    return color(255);
+}
 
-            initializeFields();
-            // size gw*8
-            createCanvas(2,2);
-            // createCanvas(board[0].length*gw, board.length*gw);
-            // size(board[0].length*gw, board.length*gw);
-            ellipseMode(CORNER);
+function setup() {
+    initializeFields();
+    createCanvas(2, 2);
+    // createCanvas(board[0].length*gw, board.length*gw);
+    // size(board[0].length*gw, board.length*gw);
+    ellipseMode(CORNER);
 }
 
 
@@ -54,9 +64,15 @@ function drawboard() {
             rect(x, y, gw, gw);
             // fill the board
             fill(numToColor(board[j][i]));
+
+
             // draw the points
-            if (board[j][i] > 0)
+            if (board[j][i] > 0){
                 ellipse(x, y, gw, gw);
+                //Sade for ellipse
+                fill(numToColorPipe(board[j][i]));
+                rect(x + gw / 60, y + gw / 60, gw, gw);
+            }
             if (board[j][i] < 0) {
                 // pipes are less than 0
                 var left = false, right = false, above = false, below = false;
@@ -92,6 +108,10 @@ function drawboard() {
                     rect(x + gw / 2, y + gw / 4, gw / 2, gw / 2);
                     rect(x + gw / 4, y + gw / 2, gw / 2, gw / 2);
                 }
+                //Shade for ellipse
+                // stroke(numToColorPipe(-board[j][i]));
+                fill(numToColorPipe(-board[j][i]));
+                rect(x + gw / 60, y + gw / 60, gw, gw);
             }
         }
     }
@@ -114,162 +134,162 @@ var boardLoaded;
 function draw() {
     //making windows resizable
     windowResized();
-    if(loadGame){
-        if(boardLoaded){
-            switch(gameLevelData){
+    if (loadGame) {
+        if (boardLoaded) {
+            switch (gameLevelData) {
                 case 1:
                     board = [
-                        [1,0,2,0,3],
-                        [0,0,4,0,5],
-                        [0,0,0,0,0],
-                        [0,2,0,3,0],
-                        [0,1,4,5,0]
+                        [1, 0, 2, 0, 3],
+                        [0, 0, 4, 0, 5],
+                        [0, 0, 0, 0, 0],
+                        [0, 2, 0, 3, 0],
+                        [0, 1, 4, 5, 0]
                     ];
                     break;
                 case 2:
                     board = [
-                        [ 7,0,0,0,0 ],
-                        [ 0,0,0,0,0 ],
-                        [ 0,0,1,0,0 ],
-                        [ 2,1,4,0,7 ],
-                        [ 4,0,0,0,2 ]
+                        [7, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0],
+                        [0, 0, 1, 0, 0],
+                        [2, 1, 4, 0, 7],
+                        [4, 0, 0, 0, 2]
                     ];
                     break;
-                    case 3:
-                        board = [
-                            [ 0,1,2,3,0 ],
-                            [ 0,0,0,4,0 ],
-                            [ 0,0,4,0,0 ],
-                            [ 1,0,0,5,0 ],
-                            [ 2,0,5,3,0 ]
-                        ];
+                case 3:
+                    board = [
+                        [0, 1, 2, 3, 0],
+                        [0, 0, 0, 4, 0],
+                        [0, 0, 4, 0, 0],
+                        [1, 0, 0, 5, 0],
+                        [2, 0, 5, 3, 0]
+                    ];
                     break;
-                    case 4:
-                        board = [
-                            [ 0,0,0,0,0 ],
-                            [ 1,4,0,4,0 ],
-                            [ 0,0,0,3,0 ],
-                            [ 3,0,0,2,0 ],
-                            [ 2,0,1,0,0 ]
-                        ];
+                case 4:
+                    board = [
+                        [0, 0, 0, 0, 0],
+                        [1, 4, 0, 4, 0],
+                        [0, 0, 0, 3, 0],
+                        [3, 0, 0, 2, 0],
+                        [2, 0, 1, 0, 0]
+                    ];
                     break;
-                    case 5:
-                        board = [
-                            [ 0,0,0,0,0 ],
-                            [ 1,2,0,2,1 ],
-                            [ 5,0,0,0,0 ],
-                            [ 0,3,0,4,0 ],
-                            [ 5,4,0,3,0 ]
-                        ];
+                case 5:
+                    board = [
+                        [0, 0, 0, 0, 0],
+                        [1, 2, 0, 2, 1],
+                        [5, 0, 0, 0, 0],
+                        [0, 3, 0, 4, 0],
+                        [5, 4, 0, 3, 0]
+                    ];
                     break;
-                    case 6:
-                        board = [
-                            [ 4,0,6,0,0,0 ],
-                            [ 2,0,0,0,0,0 ],
-                            [ 0,0,0,0,4,6 ],
-                            [ 0,0,0,2,1,7 ],
-                            [ 0,7,0,0,0,0 ],
-                            [ 1,0,0,0,0,0 ]
-                        ];
+                case 6:
+                    board = [
+                        [4, 0, 6, 0, 0, 0],
+                        [2, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 4, 6],
+                        [0, 0, 0, 2, 1, 7],
+                        [0, 7, 0, 0, 0, 0],
+                        [1, 0, 0, 0, 0, 0]
+                    ];
                     break;
-                    case 7:
-                        board = [
-                            [ 0,0,0,1,2,3 ],
-                            [ 0,0,0,4,0,0 ],
-                            [ 1,0,2,0,0,0 ],
-                            [ 5,0,0,4,5,0 ],
-                            [ 0,0,0,0,0,0 ],
-                            [ 3,0,0,0,0,0 ]
-                        ];
+                case 7:
+                    board = [
+                        [0, 0, 0, 1, 2, 3],
+                        [0, 0, 0, 4, 0, 0],
+                        [1, 0, 2, 0, 0, 0],
+                        [5, 0, 0, 4, 5, 0],
+                        [0, 0, 0, 0, 0, 0],
+                        [3, 0, 0, 0, 0, 0]
+                    ];
                     break;
-                    case 8:
-                        board = [
-                            [ 1,0,0,0,0,0 ],
-                            [ 0,6,0,0,5,6 ],
-                            [ 0,5,0,2,0,0 ],
-                            [ 1,0,0,3,4,0 ],
-                            [ 2,3,4,0,0,0 ],
-                            [ 0,0,0,0,0,0 ]
-                        ];
+                case 8:
+                    board = [
+                        [1, 0, 0, 0, 0, 0],
+                        [0, 6, 0, 0, 5, 6],
+                        [0, 5, 0, 2, 0, 0],
+                        [1, 0, 0, 3, 4, 0],
+                        [2, 3, 4, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0]
+                    ];
                     break;
-                    case 9:
-                        board = [
-                            [ 0,0,0,0,0,0 ],
-                            [ 0,1,0,0,0,2 ],
-                            [ 2,3,0,3,1,5 ],
-                            [ 0,0,0,0,0,0 ],
-                            [ 0,7,0,7,4,0 ],
-                            [ 0,0,0,0,5,4 ]
-                        ];
+                case 9:
+                    board = [
+                        [0, 0, 0, 0, 0, 0],
+                        [0, 1, 0, 0, 0, 2],
+                        [2, 3, 0, 3, 1, 5],
+                        [0, 0, 0, 0, 0, 0],
+                        [0, 7, 0, 7, 4, 0],
+                        [0, 0, 0, 0, 5, 4]
+                    ];
                     break;
-                    case 10:
-                        board = [
-                            [ 1,2,3,0,0,0,5 ],
-                            [ 0,0,4,0,4,3,0 ],
-                            [ 0,0,0,0,0,2,0 ],
-                            [ 0,0,0,0,0,0,0 ],
-                            [ 0,0,6,0,0,0,0 ],
-                            [ 0,0,0,0,0,5,0 ],
-                            [ 0,0,0,0,0,1,6 ]
-                        ];
+                case 10:
+                    board = [
+                        [1, 2, 3, 0, 0, 0, 5],
+                        [0, 0, 4, 0, 4, 3, 0],
+                        [0, 0, 0, 0, 0, 2, 0],
+                        [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 6, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 5, 0],
+                        [0, 0, 0, 0, 0, 1, 6]
+                    ];
                     break;
-                    case 11:
-                        board = [
-                            [ 0,0,0,0,0,0,0 ],
-                            [ 0,0,0,0,0,0,0 ],
-                            [ 0,0,0,0,0,0,0 ],
-                            [ 0,0,0,4,5,0,0 ],
-                            [ 0,0,5,0,0,0,0 ],
-                            [ 0,0,0,3,4,3,0 ],
-                            [ 0,1,2,0,2,1,0 ]
-                        ];
+                case 11:
+                    board = [
+                        [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 4, 5, 0, 0],
+                        [0, 0, 5, 0, 0, 0, 0],
+                        [0, 0, 0, 3, 4, 3, 0],
+                        [0, 1, 2, 0, 2, 1, 0]
+                    ];
                     break;
-                    case 12:
-                        board = [
-                            [ 0,0,0,0,0,0,0 ],
-                            [ 1,2,0,0,0,0,0 ],
-                            [ 0,0,0,0,6,0,0 ],
-                            [ 0,4,5,6,0,0,1 ],
-                            [ 0,0,0,0,0,7,3 ],
-                            [ 0,2,4,5,7,0,0 ],
-                            [ 3,0,0,0,0,0,0 ]
-                        ];
+                case 12:
+                    board = [
+                        [0, 0, 0, 0, 0, 0, 0],
+                        [1, 2, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 6, 0, 0],
+                        [0, 4, 5, 6, 0, 0, 1],
+                        [0, 0, 0, 0, 0, 7, 3],
+                        [0, 2, 4, 5, 7, 0, 0],
+                        [3, 0, 0, 0, 0, 0, 0]
+                    ];
                     break;
-                    case 13:
-                        board = [
-                            [ 0, 8, 0, 0, 2, 4, 5, 0 ],
-                            [ 0, 0, 0, 1, 0, 0, 0, 2 ],
-                            [ 0, 0, 6, 0, 0, 0, 0, 0 ],
-                            [ 0, 0, 0, 0, 0, 1, 4, 0 ],
-                            [ 0, 0, 7, 0, 0, 8, 6, 0 ],
-                            [ 5, 0, 0, 0, 0, 7, 0, 0 ],
-                            [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-                            [ 0, 0, 0, 0, 0, 0, 0, 0 ]
-                        ];
+                case 13:
+                    board = [
+                        [0, 8, 0, 0, 2, 4, 5, 0],
+                        [0, 0, 0, 1, 0, 0, 0, 2],
+                        [0, 0, 6, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 1, 4, 0],
+                        [0, 0, 7, 0, 0, 8, 6, 0],
+                        [5, 0, 0, 0, 0, 7, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0]
+                    ];
                     break;
-                    case 14:
-                        board = [
-                            [ 1, 0, 0, 0, 0, 0, 0, 3 ],
-                            [ 0, 0, 0, 0, 0, 0, 0, 4 ],
-                            [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-                            [ 0, 0, 1, 0, 0, 0, 0, 0 ],
-                            [ 0, 0, 0, 4, 2, 0, 0, 0 ],
-                            [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-                            [ 0, 0, 3, 0, 0, 0, 0, 0 ],
-                            [ 2, 0, 0, 0, 0, 0, 0, 0 ]
-                        ];
+                case 14:
+                    board = [
+                        [1, 0, 0, 0, 0, 0, 0, 3],
+                        [0, 0, 0, 0, 0, 0, 0, 4],
+                        [0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 1, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 4, 2, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 3, 0, 0, 0, 0, 0],
+                        [2, 0, 0, 0, 0, 0, 0, 0]
+                    ];
                     break;
-                    case 15:
-                        board = [
-                            [ 0, 1, 0, 0, 0, 0, 0, 2 ],
-                            [ 0, 3, 0, 0, 0, 0, 4, 0 ],
-                            [ 0, 0, 0, 0, 5, 0, 6, 0 ],
-                            [ 0, 0, 0, 6, 0, 0, 2, 0 ],
-                            [ 0, 0, 0, 1, 7, 0, 0, 0 ],
-                            [ 0, 3, 4, 0, 0, 0, 7, 0 ],
-                            [ 0, 0, 0, 0, 5, 0, 0, 0 ],
-                            [ 8, 0, 0, 0, 0, 0, 0, 8 ]
-                        ];
+                case 15:
+                    board = [
+                        [0, 1, 0, 0, 0, 0, 0, 2],
+                        [0, 3, 0, 0, 0, 0, 4, 0],
+                        [0, 0, 0, 0, 5, 0, 6, 0],
+                        [0, 0, 0, 6, 0, 0, 2, 0],
+                        [0, 0, 0, 1, 7, 0, 0, 0],
+                        [0, 3, 4, 0, 0, 0, 7, 0],
+                        [0, 0, 0, 0, 5, 0, 0, 0],
+                        [8, 0, 0, 0, 0, 0, 0, 8]
+                    ];
                     break;
             }
             boardLoaded = false;
@@ -326,48 +346,48 @@ function draw() {
                 }
             }
         } else {
-            fill(0,255,0,50);
-            rect(0,0,board[0].length*gw, board.length*gw);
+            fill(0, 255, 0, 50);
+            rect(0, 0, board[0].length * gw, board.length * gw);
             fill(255);
             textAlign(CENTER);
             textSize(40);
             textFont(gameFont);
-            text("YOU WON", 0, height / 2 - 50, width, height);
+            text("YOU WON!", 0, height / 2 - 50, width, height);
         }
     } else {
         //when we are not loading the board
         background(255);
-        resizeCanvas(2,2);
+        resizeCanvas(2, 2);
     }
 }
 
 function windowResized() {
     //Making windows resizable 
     console.log(window.outerWidth);
-    if(window.outerWidth > 859){
-     gw = 100;
+    if (window.outerWidth > 859) {
+        gw = 100;
     }
-    if(window.outerWidth < 859 && window.outerWidth > 559){
+    if (window.outerWidth < 859 && window.outerWidth > 559) {
         gw = 80;
 
     }
-    if(window.outerWidth < 691 && window.outerWidth>609){
+    if (window.outerWidth < 691 && window.outerWidth > 609) {
         gw = 70;
     }
-    if(window.outerWidth <= 609 && window.outerWidth > 515){
+    if (window.outerWidth <= 609 && window.outerWidth > 515) {
         gw = 60;
     }
-    if(window.outerWidth <= 515){
+    if (window.outerWidth <= 515) {
         gw = 50;
     }
-    if(loadGame){
-    resizeCanvas(board[0].length*gw, board.length*gw);
+    if (loadGame) {
+        resizeCanvas(board[0].length * gw, board.length * gw);
     }
- }
+}
 
 function initializeFields() {
     gameFont = loadFont('ScreenMatrix.ttf');
-    board = [ [ 0, 1, 0, 0, 0, 0, 0, 2 ], [ 0, 3, 0, 0, 0, 0, 4, 0 ], [ 0, 0, 0, 0, 5, 0, 6, 0 ], [ 0, 0, 0, 6, 0, 0, 2, 0 ], [ 0, 0, 0, 1, 7, 0, 0, 0 ], [ 0, 3, 4, 0, 0, 0, 7, 0 ], [ 0, 0, 0, 0, 5, 0, 0, 0 ], [ 8, 0, 0, 0, 0, 0, 0, 8 ] ];
+    board = [[0, 1, 0, 0, 0, 0, 0, 2], [0, 3, 0, 0, 0, 0, 4, 0], [0, 0, 0, 0, 5, 0, 6, 0], [0, 0, 0, 6, 0, 0, 2, 0], [0, 0, 0, 1, 7, 0, 0, 0], [0, 3, 4, 0, 0, 0, 7, 0], [0, 0, 0, 0, 5, 0, 0, 0], [8, 0, 0, 0, 0, 0, 0, 8]];
     gw = 100;
     startx = 0;
     starty = 0;
