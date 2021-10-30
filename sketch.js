@@ -308,8 +308,11 @@ function draw() {
                 // your position
                 cury = starty;
                 // select
-                if (board[starty][startx] > 0)
-                    selected = true;
+                if (mouseX <= width && mouseX >= 0 && mouseY <= height && mouseY >= 0){//Make sure user has clicked inside the canvas
+                    if (board[starty][startx] > 0){
+                        selected = true;
+                    }
+                }
             }
             if (mouseIsPressed == false && selected == true) {
                 selected = false;
