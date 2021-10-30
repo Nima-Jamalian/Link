@@ -179,7 +179,7 @@ function SetUpGame(level){
         boardLoaded = true;
         loadGame = true;
         gameBackButton.classList.remove("hiddenItem");
-
+        gameNextButton.classList.add("hiddenItem");
         //Stop user from scroll touch
         // document.body.style.touchAction = "none";
     }
