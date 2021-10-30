@@ -183,7 +183,7 @@ canvas {
   padding: 0; */
   bottom: +70px;
   margin: auto;
-  display:flex;
+  /* display:flex; */
   justify-content:center;
   align-items:center;
   text-align: center;
