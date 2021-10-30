@@ -169,8 +169,9 @@ canvas {
   margin-top: 0px;
   /* border: 5px solid #3D0000; */
       /* Add this when in game */
-    /* touch-action: none; */
+    touch-action: none;
 }
+
 .time{
 
 }
