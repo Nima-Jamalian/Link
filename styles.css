@@ -182,8 +182,8 @@ canvas {
   /* margin: auto;
   padding: 0; */
   bottom: +70px;
+  padding: 0px;
   margin: auto;
-  /* display:flex; */
   justify-content:center;
   align-items:center;
   text-align: center;
