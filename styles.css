@@ -163,7 +163,7 @@ padding: 2%;
 /* Game */
 canvas {
   position: relative;
-  bottom: +100px;
+  bottom: +150px;
   display: flex;
   margin: auto;
   margin-top: 0px;
@@ -177,7 +177,10 @@ canvas {
 }
 
 .gameBackButton{
-  margin-bottom: 50px;
+  /* margin-bottom: 90px; */
+  position: relative;
+  bottom: +70px;
+  /* margin: auto; */
 }
 
 .gameBackButton:hover{
