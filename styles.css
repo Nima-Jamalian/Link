@@ -179,7 +179,11 @@ canvas {
 .gameBackButton{
   /* margin-bottom: 90px; */
   position: relative;
+  /* margin: auto;
+  padding: 0; */
   bottom: +70px;
+  margin: auto;
+  margin-bottom: 10px;
   /* margin: auto; */
 }
 
