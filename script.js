@@ -26,7 +26,8 @@ const myFooter = document.querySelector(".footerText");
 var loadGame = false;
 var resizeGameWindow = true;
 const gameBackButton = document.querySelector(".gameBackButton");
-
+const gameNextButton = document.querySelector(".gameNextButton");
+var currentLevel = 0;
 //Menu
 playButton.addEventListener("click",()=>{
     DisplayMenu(false);
@@ -172,11 +173,13 @@ function DisplayHardLevelItems(show){
 //Game
 function SetUpGame(level){
     if(level != "Back"){
+        currentLevel = level;
         won = false;
         gameLevelData = parseInt(level);
         boardLoaded = true;
         loadGame = true;
         gameBackButton.classList.remove("hiddenItem");
+
         //Stop user from scroll touch
         // document.body.style.touchAction = "none";
     }
@@ -187,6 +190,16 @@ loadGame = false;
 boardLoaded = false;
 DisplayLevelSelection(true);
 gameBackButton.classList.add("hiddenItem");
+gameNextButton.classList.add("hiddenItem");
 //Activate scroll touch again
 // document.body.style.touchAction = "auto"
 });
+
+gameNextButton.addEventListener("click", ()=>{
+currentLevel++;
+SetUpGame(currentLevel);
+});
+
+function DisplayNextLevelButton(){
+    gameNextButton.classList.remove("hiddenItem");
+}

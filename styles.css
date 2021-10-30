@@ -1,162 +1,166 @@
-body{
-    background-color: black;
-    text-align: center;
-    align-items: center;
-    font-family: screenMatrix;
-
+body {
+  background-color: black;
+  text-align: center;
+  align-items: center;
+  font-family: screenMatrix;
 }
 
 canvas {
-    display: block;
-  }
+  display: block;
+}
 
 @font-face {
-    font-family: screenMatrix;
-    src: url(ScreenMatrix.ttf);
+  font-family: screenMatrix;
+  src: url(ScreenMatrix.ttf);
 }
 
-h1{
-    color: red;
-    font-size: 700%;
+h1 {
+  color: red;
+  font-size: 700%;
 }
 
-p{
-    color: white;
-    font-size: 200%;
+p {
+  color: white;
+  font-size: 200%;
 }
 
 /* Menu */
-.menuSection{
-    display: contents;
-}
-
-div {
-    display: flex;
-    justify-content: space-around;
-    width: 60%;
-    margin: auto;
-}
-
-button {
-    font-family: screenMatrix;
-    background-color: transparent;
-    color: white;
-    border-style: solid;
-    font-size: 500%;
-    width: 100%;
-    margin: 5px; /* or whatever you like */
-  }
-
-  @media only screen and (max-width: 760px) {
-    button {   font-size: 10vw; }
-    .howToPlayText{font-size: 10vw;}
-  }
-  
-.playButton:hover{
-    background-color: green;
-}
-
-.howToPlayText{
-border-style: solid;
-padding: 2%;
-}
-
-.howToPlayButton:hover{
-    background-color: 	#B3AD04;
-}
-
-.hiddenItem{
-    display: none;
-}
-
-/* Level Selection Section */
-.levelSelection{
+.menuSection {
   display: contents;
 }
 
-.easyButton{
-  background-color: #005200;
+div {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin: auto;
 }
 
-.easyButton:hover{
+/* Make all the buttons same size */
+button {
+  font-family: screenMatrix;
+  background-color: transparent;
+  color: white;
+  border-style: solid;
+  font-size: 500%;
+  width: 100%;
+  margin: 5px; /* or whatever you like */
+}
+
+@media only screen and (max-width: 760px) {
+  button {
+    font-size: 10vw;
+  }
+  .howToPlayText {
+    font-size: 10vw;
+  }
+}
+
+.playButton:hover {
   background-color: green;
 }
 
-.meduimButton{
+.howToPlayText {
+  border-style: solid;
+  padding: 2%;
+}
+
+.howToPlayButton:hover {
+  background-color: #b3ad04;
+}
+
+.hiddenItem {
+  display: none;
+}
+
+/* Level Selection Section */
+.levelSelection {
+  display: contents;
+}
+
+.easyButton {
+  background-color: #005200;
+}
+
+.easyButton:hover {
+  background-color: green;
+}
+
+.meduimButton {
   background-color: #505000;
 }
 
-.meduimButton:hover{
-  background-color: 	#999403;
+.meduimButton:hover {
+  background-color: #999403;
 }
 
-.hardButton{
+.hardButton {
   background-color: #4f0000;
 }
 
-.hardButton:hover{
+.hardButton:hover {
   background-color: #8f0909;
 }
 
-.backButtonLevelSelection:hover{
+.backButtonLevelSelection:hover {
   background-color: #8f0909;
 }
 
 /* Easy Level Section */
-.easyLevelSelection{
+.easyLevelSelection {
   display: contents;
 }
 
-.easyLevelSelectionItems{
+.easyLevelSelectionItems {
   background-color: #005200;
 }
 
-.easyLevelSelectionItems:hover{
+.easyLevelSelectionItems:hover {
   background-color: green;
 }
 
-.backButtonEasyLevelsSelection{
+.backButtonEasyLevelsSelection {
   background-color: transparent;
 }
-.backButtonEasyLevelsSelection:hover{
+.backButtonEasyLevelsSelection:hover {
   background-color: #8f0909;
 }
 
 /* Medium Level Section */
-.mediumLevelSelection{
+.mediumLevelSelection {
   display: contents;
 }
 
-.mediumLevelSelectionItems{
+.mediumLevelSelectionItems {
   background-color: #505000;
 }
 
-.mediumLevelSelectionItems:hover{
-  background-color: 	#999403;
+.mediumLevelSelectionItems:hover {
+  background-color: #999403;
 }
-.backButtonMediumLevelsSelection{
+.backButtonMediumLevelsSelection {
   background-color: transparent;
 }
-.backButtonMediumLevelsSelection:hover{
+.backButtonMediumLevelsSelection:hover {
   background-color: #8f0909;
 }
 
 /* Hard Level Section */
-.hardLevelSelection{
+.hardLevelSelection {
   display: contents;
 }
 
-.hardLevelSelectionItems{
+.hardLevelSelectionItems {
   background-color: #4f0000;
 }
 
-.hardLevelSelectionItems:hover{
-  background-color: 	#8f0909;
+.hardLevelSelectionItems:hover {
+  background-color: #8f0909;
 }
-.backButtonHardLevelsSelection{
+.backButtonHardLevelsSelection {
   background-color: transparent;
 }
-.backButtonHardLevelsSelection:hover{
+.backButtonHardLevelsSelection:hover {
   background-color: #8f0909;
 }
 
@@ -168,62 +172,72 @@ canvas {
   margin: auto;
   margin-top: 0px;
   /* border: 5px solid #3D0000; */
-      /* Add this when in game */
-    touch-action: none;
+  /* Disable touch scrolling on canvas */
+  touch-action: none;
 }
 
-.time{
-
+.time {
 }
 
-.gameBackButton{
-  /* margin-bottom: 90px; */
+.gameBackButton {
   position: relative;
-  /* margin: auto;
-  padding: 0; */
   bottom: +70px;
   padding: 0px;
   margin: auto;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   margin-bottom: 10px;
-  /* margin: auto; */
+  margin-right: 5px;
 }
 
-.gameBackButton:hover{
+.gameBackButton:hover {
   background-color: #8f0909;
+}
+
+.gameNextButton {
+  position: relative;
+  bottom: +70px;
+  padding: 0px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.gameNextButton:hover {
+  background-color: green;
 }
 
 /* footer section */
 footer {
-    margin: auto;
-    margin-top: 80px;
-    font-size: 1rem;
-    padding-top: 0px;
-  }
-  
-  .imgNima{
-    width: 1.5rem;
-  }
-  
-  .footerText{
-    color: #950101;
-  }
+  margin: auto;
+  margin-top: 80px;
+  font-size: 1rem;
+  padding-top: 0px;
+}
 
-  .moveFooter{
-    position: relative;
-    /* bottom: -850px; */
-    bottom: -400px;
-  }
-  
-  a{
-    text-decoration: none;
-    
-    color: #DBEDF3;
-  }
-  
-  a:hover{
-    color: #a2b0b4;
-  }
+.imgNima {
+  width: 1.5rem;
+}
 
+.footerText {
+  color: #950101;
+}
+
+.moveFooter {
+  position: relative;
+  bottom: -400px;
+}
+
+a {
+  text-decoration: none;
+
+  color: #dbedf3;
+}
+
+a:hover {
+  color: #a2b0b4;
+}
