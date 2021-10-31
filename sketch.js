@@ -392,7 +392,7 @@ function windowResized() {
     gw = 60;
   }
   if (window.outerWidth <= 515&& window.outerWidth > 360) {
-    gw = 50;
+    gw = 45;
   }
   if(window.outerWidth <= 360){
     gw = 40;
