@@ -379,7 +379,6 @@ function draw() {
 
 function windowResized() {
   //Making windows resizable
-  console.log(window.outerWidth);
   if (window.outerWidth > 859) {
     gw = 100;
   }
@@ -392,8 +391,11 @@ function windowResized() {
   if (window.outerWidth <= 609 && window.outerWidth > 515) {
     gw = 60;
   }
-  if (window.outerWidth <= 515) {
+  if (window.outerWidth <= 515&& window.outerWidth > 360) {
     gw = 50;
+  }
+  if(window.outerWidth <= 360){
+    gw = 40;
   }
   if (loadGame) {
     resizeCanvas(board[0].length * gw, board.length * gw);
